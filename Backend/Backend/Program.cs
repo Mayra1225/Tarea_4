@@ -15,12 +15,15 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-app.UseRouting();
-
 app.UseCors("cors_app");
+
+app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Urls.Add($"http://0.0.0.0:{port}");
 
 app.Run();
