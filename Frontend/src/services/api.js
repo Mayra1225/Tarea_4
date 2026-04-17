@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:5232/api/Alumnos'
+const API_URL = 'https://tarea-4-aonp.onrender.com/api/Alumno'
 
 const api = axios.create({
   baseURL: API_URL,
